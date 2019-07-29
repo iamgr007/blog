@@ -15,7 +15,7 @@ stackoverflow_username: iamgr007
 
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-midnight
+theme: jekyll-theme-minimal
 plugins:
   - jekyll-feed
 port: 6969
