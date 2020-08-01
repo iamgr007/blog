@@ -9,6 +9,10 @@ Documentation is the evidence of our work which we want to remember. And I'm tir
 
 Don't get me started with the problems during my time with dual-boot(Windows Ubuntu) because as productive as it can be, it could get counter-productive at times.
 
+Also, Nvidia killed off GeForce driver support which was a really bad news for the Linux community. The great Linus Trovalds <a href="https://youtu.be/iYWzMvlj2RQ">ranted</a> vis-à-vis this issue with Nvidia, which didn’t really help. So, how to set up a stable environment where you can enjoy the benefits of both Windows and Linux?</p>
+<iframe width="560" height="315" src="./Welcome &amp;&amp; Windows Subsystem for Linux! _ Abhishek B_files/iYWzMvlj2RQ.html" frameborder="50" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<p>Well, you’ve alternatives don’t you? For starters, we have Virtual Machines. And what to do if you don’t have to use any mainstream applications which run on only Linux?
+
 Well, you've alternatives don't you? For starters, we have Virtual Machines. And what to do if you don't have to use any mainstream applications which run on only Linux?
 
 Recently, Microsoft has announced Windows Subsystem for Linux (WSL) using which you can run Linux terminal utilities. But the mighty WSL can do more than just what it is meant for. Here's how we can run graphical Linux desktop applications.
