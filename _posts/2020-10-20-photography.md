@@ -2,7 +2,6 @@
 layout: post
 title:  "How to Efficiently use a DSLR Camera?"
 date:   2020-10-20 22:42:59 +0530
-categories: Photography hobby beginner noob 
 author: Abhishek Bagati
 ---
 
