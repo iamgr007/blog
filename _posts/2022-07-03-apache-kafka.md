@@ -105,49 +105,49 @@ bin\windows\kafka-console-producer.bat --bootstrap-server localhost:9092 --topic
 
 ```
 
-### consumer-3.properties
+### consumer.properties
 
 ```
-bootstrap.servers=kafka-node-1.lime.ai:9092,kafka-node-2.lime.ai:9092,kafka-node-3.lime.ai:9092
+bootstrap.servers=''
 # group.id=test-consumer-group
 security.protocol=SSL
 ssl.protocol=TLSv1.2
-ssl.truststore.location=/datadisk/applications/kafka/ssl/kafka.consumer-3.truststore.jks
-ssl.truststore.password=lime123
-ssl.keystore.location=/datadisk/applications/kafka/ssl/kafka.consumer-3.keystore.jks
-ssl.keystore.password=lime123
-ssl.key.password=lime123
+ssl.truststore.location=/path/to/kafka.consumer.truststore.jks
+ssl.truststore.password=password
+ssl.keystore.location=/path/to/kafka.consumer.keystore.jks
+ssl.keystore.password=password
+ssl.key.password=password
 
 ```
 
-### producer-3.properties
+### producer.properties
 
 ```
-bootstrap.servers=kafka-node-1.lime.ai:9092,kafka-node-2.lime.ai:9092,kafka-node-3.lime.ai:9092
+bootstrap.servers='servers'
 security.protocol=SSL
 ssl.protocol=TLSv1.2
-ssl.truststore.location=/datadisk/applications/kafka/ssl/kafka.producer-3.truststore.jks
-ssl.truststore.password=lime123
-ssl.keystore.location=/datadisk/applications/kafka/ssl/kafka.producer-3.keystore.jks
-ssl.keystore.password=lime123
-ssl.key.password=lime123
+ssl.truststore.location=/path/to/kafka.producer.truststore.jks
+ssl.truststore.password=password
+ssl.keystore.location=/path/to/kafka.producer.keystore.jks
+ssl.keystore.password=password
+ssl.key.password=password
 
 ```
 ## start consumer
 
 ```
-bin\windows\kafka-console-consumer.bat --bootstrap-server=kafka-node-1.lime.ai:9094,kafka-node-2.lime.ai:9094,kafka-node-3.lime.ai:9094 --topic ss-test --consumer.config config/consumer-3.properties --from-beginning
+bin\windows\kafka-console-consumer.bat --bootstrap-server=servers --topic ss-test --consumer.config config/consumer.properties --from-beginning
 ```
 ```
-bin/kafka-console-consumer.sh --bootstrap-server=kafka-node-1.lime.ai:9094,kafka-node-2.lime.ai:9094,kafka-node-3.lime.ai:9094 --topic ss-test --consumer.config config/consumer-3.properties --from-beginning
+bin/kafka-console-consumer.sh --bootstrap-server=servers --topic ss-test --consumer.config config/consumer.properties --from-beginning
 ```
 
 ## start producer
 
 ```
-bin\windows\kafka-console-producer.bat --bootstrap-server=kafka-node-1.lime.ai:9094,kafka-node-2.lime.ai:9094,kafka-node-3.lime.ai:9094 --topic ss-test --producer.config config/producer-3.properties
+bin\windows\kafka-console-producer.bat --bootstrap-server=servers --topic ss-test --producer.config config/producer.properties
 ```
 ```
-bin/kafka-console-producer.sh --bootstrap-server=kafka-node-1.lime.ai:9094,kafka-node-2.lime.ai:9094,kafka-node-3.lime.ai:9094 --topic ss-test --producer.config config/producer-3.properties
+bin/kafka-console-producer.sh --bootstrap-server=servers --topic ss-test --producer.config config/producer.properties
 ```
 
