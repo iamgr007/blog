@@ -83,3 +83,71 @@ Instead, add Kafka Broker `--bootstrap-server localhost:9092` connection string.
 .\bin\windows\kafka-topics.bat --bootstrap-server localhost:9092 --delete --topic test1 
 ```
 
+This is where it all stopped working. Issue being with windows support maybe.
+<a href="https://issues.apache.org/jira/browse/KAFKA-10419">KAFKA BROKER Shuts down when a topic is deleted manually from command line on Windows </a>
+
+
+## starting a consumer
+
+```
+bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test --consumer.config config/consumer.properties --from-beginning
+```
+
+## starting a producer
+
+```
+bin\windows\kafka-console-producer.bat --bootstrap-server localhost:9092 --topic test --producer.config config/producer.properties
+```
+
+## SSL certificates configuration
+
+```
+
+```
+
+### consumer-3.properties
+
+```
+bootstrap.servers=kafka-node-1.lime.ai:9092,kafka-node-2.lime.ai:9092,kafka-node-3.lime.ai:9092
+# group.id=test-consumer-group
+security.protocol=SSL
+ssl.protocol=TLSv1.2
+ssl.truststore.location=/datadisk/applications/kafka/ssl/kafka.consumer-3.truststore.jks
+ssl.truststore.password=lime123
+ssl.keystore.location=/datadisk/applications/kafka/ssl/kafka.consumer-3.keystore.jks
+ssl.keystore.password=lime123
+ssl.key.password=lime123
+
+```
+
+### producer-3.properties
+
+```
+bootstrap.servers=kafka-node-1.lime.ai:9092,kafka-node-2.lime.ai:9092,kafka-node-3.lime.ai:9092
+security.protocol=SSL
+ssl.protocol=TLSv1.2
+ssl.truststore.location=/datadisk/applications/kafka/ssl/kafka.producer-3.truststore.jks
+ssl.truststore.password=lime123
+ssl.keystore.location=/datadisk/applications/kafka/ssl/kafka.producer-3.keystore.jks
+ssl.keystore.password=lime123
+ssl.key.password=lime123
+
+```
+## start consumer
+
+```
+bin\windows\kafka-console-consumer.bat --bootstrap-server=kafka-node-1.lime.ai:9094,kafka-node-2.lime.ai:9094,kafka-node-3.lime.ai:9094 --topic ss-test --consumer.config config/consumer-3.properties --from-beginning
+```
+```
+bin/kafka-console-consumer.sh --bootstrap-server=kafka-node-1.lime.ai:9094,kafka-node-2.lime.ai:9094,kafka-node-3.lime.ai:9094 --topic ss-test --consumer.config config/consumer-3.properties --from-beginning
+```
+
+## start producer
+
+```
+bin\windows\kafka-console-producer.bat --bootstrap-server=kafka-node-1.lime.ai:9094,kafka-node-2.lime.ai:9094,kafka-node-3.lime.ai:9094 --topic ss-test --producer.config config/producer-3.properties
+```
+```
+bin/kafka-console-producer.sh --bootstrap-server=kafka-node-1.lime.ai:9094,kafka-node-2.lime.ai:9094,kafka-node-3.lime.ai:9094 --topic ss-test --producer.config config/producer-3.properties
+```
+
